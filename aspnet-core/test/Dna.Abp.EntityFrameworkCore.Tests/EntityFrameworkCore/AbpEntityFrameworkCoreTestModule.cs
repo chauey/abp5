@@ -12,7 +12,7 @@ namespace Dna.Abp.EntityFrameworkCore;
 
 [DependsOn(
     typeof(AbpEntityFrameworkCoreModule),
-    typeof(AbpTestBaseModule),
+    typeof(AbpTestBaseModule2),
     typeof(AbpEntityFrameworkCoreSqliteModule)
     )]
 public class AbpEntityFrameworkCoreTestModule : AbpModule

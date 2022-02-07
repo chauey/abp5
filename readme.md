@@ -45,7 +45,7 @@ OR
 - [Part 1: Creating the server side](/docs/01-creating-the-server-side)
 - [Part 2: The book list page](/docs/02-the-book-list-page)
 - [Part 3: Creating, updating and deleting books](/docs/03-creating-updating-and-deleting-books)
-- [Part 4: Integration tests](/docs/0)
+- [Part 4: Integration tests](/docs/04-integration-tests)
 - [Part 5: Authorization](/docs/0)
 - [Part 6: Authors: Domain layer](/docs/0)
 - [Part 7: Authors: Database Integration](/docs/0)

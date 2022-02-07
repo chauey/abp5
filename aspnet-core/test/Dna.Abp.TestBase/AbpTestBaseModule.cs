@@ -16,7 +16,7 @@ namespace Dna.Abp;
     typeof(AbpAuthorizationModule),
     typeof(AbpDomainModule)
     )]
-public class AbpTestBaseModule : AbpModule
+public class AbpTestBaseModule2 : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

@@ -1,4 +1,5 @@
 using System;
+using Dna.Abp.Permissions;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
@@ -17,7 +18,11 @@ namespace Dna.Abp.Books
         public BookAppService(IRepository<Book, Guid> repository)
             : base(repository)
         {
-
+            GetPolicyName = AbpPermissions.Books.Default;
+            GetListPolicyName = AbpPermissions.Books.Default;
+            CreatePolicyName = AbpPermissions.Books.Create;
+            UpdatePolicyName = AbpPermissions.Books.Edit;
+            DeletePolicyName = AbpPermissions.Books.Delete;
         }
     }
 }

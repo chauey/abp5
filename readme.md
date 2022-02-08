@@ -38,7 +38,7 @@ OR
 - npm start
 - navigate to http://localhost:519/
   - username: admin
-  - password: 1q2w3E\*
+  - password: 1q2w3E*
 
 ## Angular/.NET/EF Tutorial for adding Book/Authors
 

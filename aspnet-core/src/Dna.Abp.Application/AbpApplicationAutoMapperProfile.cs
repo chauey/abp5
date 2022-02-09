@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dna.Abp.Authors;
 using Dna.Abp.Books;
 
 namespace Dna.Abp;
@@ -12,5 +13,6 @@ public class AbpApplicationAutoMapperProfile : Profile
          * into multiple profile classes for a better organization. */
         CreateMap<Book, BookDto>();
         CreateMap<CreateUpdateBookDto, Book>();
+        CreateMap<Author, AuthorDto>();
     }
 }

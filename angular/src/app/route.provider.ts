@@ -21,6 +21,7 @@ function configureRoutes(routes: RoutesService) {
         order: 2,
         layout: eLayoutType.application,
       },
+
       {
         path: '/books',
         name: '::Menu:Books',
@@ -28,6 +29,14 @@ function configureRoutes(routes: RoutesService) {
         layout: eLayoutType.application,
         requiredPolicy: 'Abp.Books',
       },
+      {
+        path: '/authors',
+        name: '::Menu:Authors',
+        parentName: '::Menu:BookStore',
+        layout: eLayoutType.application,
+        requiredPolicy: 'Abp.Authors',
+      }
+     
     ]);
   };
 }

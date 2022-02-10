@@ -9,5 +9,9 @@ namespace Dna.Abp.Books
         public BookType Type { get; set; }
         public DateTime PublishDate { get; set; }
         public float Price { get; set; }
+
+        public Guid AuthorId { get; set; }
+        public string AuthorName { get; set; }
+
     }
 }

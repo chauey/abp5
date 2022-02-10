@@ -10,6 +10,7 @@ export interface CreateAuthorDto {
   name: string;
   birthDate: string;
   shortBio?: string;
+  authorId?: string;
 }
 
 export interface GetAuthorListDto extends PagedAndSortedResultRequestDto {

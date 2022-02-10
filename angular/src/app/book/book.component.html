@@ -7,7 +7,13 @@
       <div class="text-right col col-md-6">
         <!-- "new book" button -->
         <div class="text-lg-right pt-2">
-          <button id="create" *abpPermission="'Abp.Books.Create'" class="btn btn-primary" type="button" (click)="createBook()">
+          <button
+            id="create"
+            *abpPermission="'Abp.Books.Create'"
+            class="btn btn-primary"
+            type="button"
+            (click)="createBook()"
+          >
             <i class="fa fa-plus mr-1"></i>
             <span>{{ '::NewBook' | abpLocalization }}</span>
           </button>
@@ -37,7 +43,7 @@
                 {{ '::Edit' | abpLocalization }}
               </button>
               <!-- Delete button -->
-              <button ngbDropdownItem (click)="delete(row.id)" *abpPermission="'Abp000000000000000000000000000000000000000000000000000000000000000000000000000000.Books.Delete'">
+              <button ngbDropdownItem (click)="delete(row.id)" *abpPermission="'Abp.Books.Delete'">
                 {{ '::Delete' | abpLocalization }}
               </button>
             </div>
@@ -45,6 +51,11 @@
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column [name]="'::Name' | abpLocalization" prop="name"></ngx-datatable-column>
+      <ngx-datatable-column
+        [name]="'::Author' | abpLocalization"
+        prop="authorName"
+        [sortable]="false"
+      ></ngx-datatable-column>
       <ngx-datatable-column [name]="'::Type' | abpLocalization" prop="type">
         <ng-template let-row="row" ngx-datatable-cell-template>
           {{ '::Enum:BookType:' + row.type | abpLocalization }}
@@ -72,6 +83,15 @@
 
   <ng-template #abpBody>
     <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="author-id">Author</label><span> * </span>
+        <select class="form-control" id="author-id" formControlName="authorId">
+          <option [ngValue]="null">Select author</option>
+          <option [ngValue]="author.id" *ngFor="let author of authors$ | async">
+            {{ author.name }}
+          </option>
+        </select>
+      </div>
       <div class="form-group">
         <label for="book-name">Name</label><span> * </span>
         <input type="text" id="book-name" class="form-control" formControlName="name" autofocus />
